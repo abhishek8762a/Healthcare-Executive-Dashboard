@@ -1,120 +1,87 @@
-# 🏥 Healthcare Executive Dashboard
+<div align="center">
 
-> An interactive Power BI dashboard designed to provide healthcare executives with meaningful insights into hospital performance, patient trends, revenue, and satisfaction.
+# 🏥 Healthcare Executive Dashboard (Power BI)
 
----
+**One-page Power BI dashboard on 5,000 patient visits that shows hospital revenue, patient volume and satisfaction at a glance.**
 
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
+![Power Query](https://img.shields.io/badge/Power%20Query-0B1120?style=flat-square)
+![DAX](https://img.shields.io/badge/DAX-0B1120?style=flat-square)
+![Status](https://img.shields.io/badge/status-complete-22C55E?style=flat-square)
 
+<img src="images/dashboard.png" alt="Healthcare Executive Dashboard" width="900"/>
 
----
-
-## 📌 Project Overview
-
-The **Healthcare Executive Dashboard** is built using **Microsoft Power BI** to help healthcare organizations monitor key performance indicators (KPIs) through an interactive and user-friendly dashboard.
-
-This dashboard provides a clear overview of hospital operations, allowing executives to analyze revenue, patient volume, satisfaction scores, and visit trends for better decision-making.
-
----
-
-## 🎯 Business Objectives
-
-- Monitor overall hospital performance
-- Track monthly revenue trends
-- Analyze patient visit distribution
-- Compare hospital performance
-- Improve executive decision-making using KPIs
+</div>
 
 ---
 
-## 📊 Dashboard KPIs
+## 📌 Overview
 
-| KPI | Description |
-|------|-------------|
-| ⭐ Average Satisfaction | Overall patient satisfaction score |
-| 💰 Total Revenue | Total revenue generated |
-| 👥 Total Patients | Total number of patients |
+Hospital leaders need a quick answer to three questions: how much revenue each hospital brings in, where patient volume comes from, and how satisfied patients are. This dashboard puts those answers on one page, with filters for hospital, date, visit type and city.
 
----
+## 📂 Dataset
 
-## 📈 Dashboard Visualizations
+| | |
+|---|---|
+| **File** | [`data/healthcare_visits.csv`](data/healthcare_visits.csv) |
+| **Rows** | 5,000 patient visits (one row per patient) |
+| **Period** | January – December 2023 |
+| **Coverage** | 5 hospitals in 5 cities; visit types OPD, IPD and Emergency |
+| **Columns (17)** | patient age and gender, chronic condition, hospital, city, latitude/longitude, visit date, visit type, length of stay, total bill, insurance type, lab tests ordered, 30-day readmission, satisfaction score |
 
-- 📅 Monthly Average Bill Trend
-- 🏥 Revenue by Hospital
-- 💵 Revenue by Hospital & Visit Type
-- 👨‍⚕️ Visit Volume by Visit Type
-- 🎛 Interactive Filters (Hospital, Date, City, Visit Type)
+## 📊 KPIs
 
----
+| KPI | Value |
+|---|---|
+| 💰 Total Revenue | 75.1M |
+| 👥 Total Patients | 5,000 |
+| ⭐ Average Satisfaction | 3.59 / 5 |
+| 🎂 Average Patient Age | 44.4 years |
 
-## 🛠️ Tools & Technologies
+## 📈 Visuals
 
-- Microsoft Power BI
-- Power Query
-- DAX
-- Data Modeling
-- Data Visualization
+- Revenue by hospital and visit type (clustered bar)
+- Monthly average bill trend (line)
+- Revenue by hospital (bar)
+- Visit volume by visit type (column)
+- Slicers: hospital, date, visit type, city
 
----
+## 🔍 Key Insights
 
-## 📌 Key Insights
+- **OPD brings the most patients, IPD brings the most money.** OPD is 53% of visits (2,672) but IPD, with 30% of visits (1,521), earns 49% of revenue (37.1M).
+- **IPD is the top revenue source at every hospital** in the revenue-by-visit-type chart.
+- **Metro Health Center leads revenue (15.9M)**, but all five hospitals sit in a narrow band (14.4M – 15.9M).
+- **The average bill per visit is about 3x higher for IPD (24.4K) than for OPD (7.9K).**
+- **Data quality note:** 287 visits have no satisfaction score, so the 3.59 average is based on the remaining 4,713.
 
-✔ Monitor hospital revenue performance.
+## 🛠️ Approach
 
-✔ Compare revenue across multiple hospitals.
+1. **Prepare** the CSV in Power Query.
+2. **Measure** the KPIs with DAX: revenue, patient count, average satisfaction and average age.
+3. **Design** a one-page executive layout: KPI cards on top, comparison charts below, slicers on the left.
 
-✔ Analyze OPD, IPD, and Emergency visits.
-
-✔ Track monthly billing trends.
-
-✔ Monitor patient satisfaction.
-
-✔ Enable faster executive-level decision making.
-
----
-
-## 🚀 Features
-
-- Interactive Dashboard
-- Dynamic Filters
-- KPI Cards
-- Executive Reporting
-- Clean & Professional UI
-- Easy Navigation
-
----
-
-## 📂 Project Files
+## 📁 Repository Structure
 
 ```
-📁 Healthcare Executive Dashboard
-│
-├── Healthcare Executive Dashboard.pbix
-├── dashboard.png
+healthcare-executive-dashboard/
+├── data/
+│   └── healthcare_visits.csv                 # 5,000 patient visits (2023)
+├── dashboard/
+│   └── healthcare_executive_dashboard.pbix   # Power BI report
+├── images/
+│   └── dashboard.png                         # dashboard screenshot
 └── README.md
 ```
 
----
+## ▶️ How to Open
 
-## 📷 Dashboard Snapshot
-
-> Replace **dashboard.png** with your own dashboard screenshot.
-
----
-
-## 👨‍💻 Author
-
-**Abhishek Kumar**
-
-Aspiring Data Analyst
-
-Skills:
-- Power BI
-- SQL
-- Excel
-- Python
-- Data Visualization
-- DAX
+1. Install [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free).
+2. Open `dashboard/healthcare_executive_dashboard.pbix`.
+3. Use the slicers on the left to filter by hospital, date, visit type or city.
 
 ---
 
-## ⭐ If you like this project, don't forget to give it a Star!<img width="1021" height="576" alt="dashboard" src="https://github.com/user-attachments/assets/91f2a634-c7a7-46de-97e5-a95e60648533" />
+## 👤 Author
+
+**Abhishek Kumar** · MIS Data Analyst  
+[LinkedIn](https://www.linkedin.com/in/abhikumar8762/) · [GitHub](https://github.com/abhishek8762a) · [Portfolio](https://abhishek-portfolio-8762.vercel.app) · [Email](mailto:abhiyadav8762@gmail.com)
